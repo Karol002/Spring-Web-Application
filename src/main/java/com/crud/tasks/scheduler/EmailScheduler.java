@@ -20,8 +20,7 @@ public class EmailScheduler {
     @Scheduled(cron = "0 0 10 * * *")
     public void sendInformationEmail() {
         long size = taskRepository.count();
-        StringBuilder task = new StringBuilder("task");
-        if (size > 1) task.append("s");
+        String task = size > 1 ? "tasks" : "task";
 
         simpleEmailService.send( new Mail(
                         adminConfig.getAdminMail(),
