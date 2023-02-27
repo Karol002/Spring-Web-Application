@@ -1,4 +1,4 @@
-package com.crud.tasks.task;
+package com.crud.tasks.controller;
 
 import com.crud.tasks.controller.TaskController;
 import com.crud.tasks.domain.Task;
