@@ -12,7 +12,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 
 import java.util.Arrays;
 import java.util.List;
@@ -49,8 +48,8 @@ class TrelloControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect((ResultMatcher) jsonPath("$[0].id", is("test_board_id")))
-                .andExpect((ResultMatcher) jsonPath("$[0].name", is("test_board_name")));
+                .andExpect(jsonPath("$[0].id", is("test_board_id")))
+                .andExpect(jsonPath("$[0].name", is("test_board_name")));
     }
 
     @Test
